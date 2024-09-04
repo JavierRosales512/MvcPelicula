@@ -1,4 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using MvcPelicula.Datos;
+
 var builder = WebApplication.CreateBuilder(args);
+
+//------- Agregando el contexto
+
+builder.Services.AddDbContext<DbContexto>(opciones =>
+    opciones.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnectionBD"))
+);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

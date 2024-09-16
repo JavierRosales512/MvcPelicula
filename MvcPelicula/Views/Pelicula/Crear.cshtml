@@ -1,0 +1,47 @@
+﻿@model MvcPelicula.Models.Pelicula
+@{
+    ViewData["Title"] = "Nueva Película";
+}
+
+<div class="row">
+    <div class="offset-12">
+
+        <div class="card">
+            <div class="card-header bg-dark">
+                <h2 class="text-center text-white"><strong>Crear Nueva Película</strong></h2>
+            </div>
+            <div class="card-body">
+                <form asp-action="Crear" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label class="control-label" asp-for="Titulo">Título</label>
+                        <input type="text" class="form-control" asp-for="Titulo" placeholder="Título de película">
+                        <span asp-validation-for="Titulo" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" asp-for="Genero">Género</label>
+                        <input class="form-control" asp-for="Genero" placeholder="Género de película" />
+                        <span asp-validation-for="Genero" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" asp-for="Price">Precio</label>
+                        <input class="form-control" asp-for="Price" placeholder="Precio de película" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mt-2 d-flex justify-content-center">
+                        <a class="btn btn-outline-dark btn-lg w-25 mx-2" asp-controller="Pelicula" asp-action="Index">
+                            <i class="fa-solid fa-arrow-left"></i> Regresar
+                        </a>
+
+                        <button class="btn btn btn-outline-primary btn-lg w-25" type="submit">
+                            <i class="fa-regular fa-floppy-disk"></i> Guardar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+﻿@model MvcPelicula.Models.Pelicula
+@{
+    ViewData["Title"] = "Información de Película";
+}
+
+<div class="row">
+    <div class="offset-12">
+        <div class="card">
+            <div class="card-header bg-dark">
+                <h2 class="text-center text-white"><strong>Editar Película</strong></h2>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>Título: </strong>@Html.DisplayFor(m => m.Titulo)</li>
+                    <li class="list-group-item"><strong>Fecha de Carga: </strong>@Html.DisplayFor(m => m.FechaCarga)</li>
+                    <li class="list-group-item"><strong>Género: </strong>@Html.DisplayFor(m => m.Genero)</li>
+                    <li class="list-group-item"><strong>Precio: </strong>@Html.DisplayFor(m => m.Price)</li>
+                    <li class="list-group-item form-group mt-2 d-flex justify-content-center">
+                        <a class="btn btn-outline-dark btn-lg w-25 mx-2" asp-controller="Pelicula" asp-action="Index">
+                            <i class="fa-solid fa-arrow-left"></i> Regresar
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
